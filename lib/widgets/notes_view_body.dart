@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/custom_appBar.dart';
-import 'package:notes_app/views/widgets/notes_item.dart';
+import 'package:notes_app/widgets/custom_appBar.dart';
+import 'package:notes_app/widgets/notes_item.dart';
+import 'package:notes_app/widgets/notes_listView.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -8,14 +10,14 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
           SizedBox(
-            height: 30,
+            height: 50,
           ),
           CustomAppBar(),
-          NotesItem(),
+          Expanded(child: NotesListView()),
         ],
       ),
     );
